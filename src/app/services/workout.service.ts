@@ -49,6 +49,20 @@ export class WorkoutService {
         workoutType: 'Cycling',
         minutes: 40,
         date: new Date()
+      },
+      {
+        id: '5',
+        username: 'Dale',
+        workoutType: 'Cycling',
+        minutes: 60,
+        date: new Date()
+      },
+      {
+        id: '6',
+        username: 'Dale',
+        workoutType: 'Yoga',
+        minutes: 20,
+        date: new Date()
       }
     ];
 
