@@ -6,7 +6,7 @@ import { WorkoutChartsComponent } from '../../components/workout-charts/workout-
   standalone: true,
   imports: [WorkoutChartsComponent],
   template: `
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 py-8 bg-black min-h-screen min-w-screen">
       <h1 class="text-3xl font-bold mb-8 text-center">Workout Statistics</h1>
       <app-workout-charts></app-workout-charts>
     </div>

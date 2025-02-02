@@ -8,9 +8,9 @@ import { WorkoutSummary } from '../../models/workout.model';
 @Component({
   selector: 'app-workout-charts',
   imports: [CommonModule, NgChartsModule],
-  template:` <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-  <div class="card">
-    <h3 class="text-lg font-semibold mb-4">Total Workout Minutes per User</h3>
+  template:` <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 max-w-400">
+  <div class="card bg-gray-800 p-6 rounded-lg shadow-md ">
+    <h3 class="text-lg font-semibold text-gray-200 mb-4">Total Workout Minutes per User</h3>
     <canvas baseChart
       [data]="minutesChartData"
       [options]="chartOptions"
@@ -18,15 +18,16 @@ import { WorkoutSummary } from '../../models/workout.model';
     </canvas>
   </div>
 
-  <div class="card">
-    <h3 class="text-lg font-semibold mb-4">Workout Type Distribution</h3>
+  <div class="card bg-gray-800 p-6 rounded-lg shadow-md">
+    <h3 class="text-lg font-semibold text-gray-200 mb-4">Workout Type Distribution</h3>
     <canvas baseChart
       [data]="workoutTypeChartData"
       [options]="pieChartOptions"
       [type]="'pie'">
     </canvas>
   </div>
-</div>`,
+</div>
+`,
 })
 export class WorkoutChartsComponent {
   minutesChartData: ChartConfiguration<'bar'>['data'] = {

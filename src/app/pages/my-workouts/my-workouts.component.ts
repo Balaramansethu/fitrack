@@ -4,7 +4,7 @@ import { WorkoutListComponent } from '../../components/workout-list/workout-list
 @Component({
   selector: 'app-my-workouts',
   imports: [WorkoutListComponent],
-  template: ` <div class="container mx-auto px-4 py-8">
+  template: ` <div class="container mx-auto px-4 py-8 bg-black min-h-screen min-w-screen">
     <h1 class="text-3xl font-bold mb-8 text-center">My Workouts</h1>
     <app-workout-list></app-workout-list>
   </div>`,
