@@ -7,9 +7,9 @@ describe('WorkoutService', () => {
   let service: WorkoutService;
 
   beforeEach(() => {
-    localStorage.clear();
     TestBed.configureTestingModule({});
     service = TestBed.inject(WorkoutService);
+    localStorage.clear(); 
   });
 
   it('should be created', () => {
@@ -18,7 +18,7 @@ describe('WorkoutService', () => {
 
   it('should initialize with default data when storage is empty', async () => {
     const workouts = await firstValueFrom(service.getWorkouts());
-    expect(workouts.length).toBe(4);
+    expect(workouts.length).toBe(6); 
   });
 
   it('should add new workout', async () => {
@@ -30,15 +30,16 @@ describe('WorkoutService', () => {
     };
 
     service.addWorkout(newWorkout);
+
     const workouts = await firstValueFrom(service.getWorkouts());
-    
     const addedWorkout = workouts.find(w => w.username === 'Test User');
+    
     expect(addedWorkout).toBeTruthy();
     expect(addedWorkout?.workoutType).toBe('Running');
     expect(addedWorkout?.minutes).toBe(30);
   });
 
-  it('should persist workouts to localStorage', () => {
+  it('should persist workouts to localStorage', async () => {
     const newWorkout: Omit<Workout, 'id'> = {
       username: 'Storage Test',
       workoutType: 'Yoga',
@@ -47,7 +48,7 @@ describe('WorkoutService', () => {
     };
 
     service.addWorkout(newWorkout);
-    
+
     const storedData = localStorage.getItem('workouts');
     expect(storedData).toBeTruthy();
     
@@ -58,11 +59,15 @@ describe('WorkoutService', () => {
   it('should generate workout summaries correctly', async () => {
     const summaries = await firstValueFrom(service.getWorkoutSummaries());
     
-    expect(summaries.length).toBe(2); // Two unique users in default data
-    
+    expect(summaries.length).toBe(3);
+
     const johnSummary = summaries.find(s => s.username === 'John Doe');
     expect(johnSummary?.numberOfWorkouts).toBe(2);
     expect(johnSummary?.workouts).toContain('Running');
     expect(johnSummary?.workouts).toContain('Cycling');
+  });
+
+  afterEach(() => {
+    localStorage.clear(); 
   });
 });

@@ -78,7 +78,7 @@ export class WorkoutFormsComponent {
     }
   }
 
-  private isValidWorkout(): boolean {
+  public isValidWorkout(): boolean {
     return Boolean(
       this.username &&
       this.workoutType &&
