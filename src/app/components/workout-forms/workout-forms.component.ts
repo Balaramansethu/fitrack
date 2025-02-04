@@ -50,7 +50,7 @@ import { WorkoutService } from '../../services/workout.service';
     </div>
     <button 
       (click)="addWorkout()"
-      class="btn-primary w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200"
+      class="btn-primary w-full px-4 mt-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200"
     >
       Add Workout
     </button>
