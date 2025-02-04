@@ -43,7 +43,7 @@ import { WorkoutSummary } from '../../models/workout.model';
     </div>
   </div>
 
-  <div class="overflow-x-auto ">
+  <div class="overflow-x-auto min-h-auto">
     <table class="min-w-full divide-y divide-gray-600">
       <thead class="bg-gray-700">
         <tr>

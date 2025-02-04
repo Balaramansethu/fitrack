@@ -8,7 +8,7 @@ import { WorkoutSummary } from '../../models/workout.model';
 @Component({
   selector: 'app-workout-charts',
   imports: [CommonModule, NgChartsModule],
-  template:` <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 max-w-400">
+  template:` <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 max-w-400 mx-9">
   <div class="card bg-gray-800 p-6 rounded-lg shadow-md ">
     <h3 class="text-lg font-semibold text-gray-200 mb-4">Total Workout Minutes per User</h3>
     <canvas baseChart
